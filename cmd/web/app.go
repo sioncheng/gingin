@@ -1,14 +1,15 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"log"
+	"net/http"
 )
 
 type app struct {
 }
 
 func (a *app) home(c *gin.Context) {
-	c.HTML(http.StatusOK, "home", nil)
+	log.Println("home handler")
+	c.HTML(http.StatusOK, "home", gin.H{})
 }
